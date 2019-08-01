@@ -3,6 +3,9 @@ import {
   EventEmitter
 } from '@angular/core';
 import { Book } from '../../models';
+import {Store} from '@ngrx/store';
+import * as fromRoot from '../../store/reducers';
+import * as bookAction from '../../store/actions/books';
 
 
 @Component({
@@ -14,7 +17,7 @@ export class BookListComponent implements OnInit, OnChanges {
   @Input() label: string;
   @Output() select = new EventEmitter();
 
-  constructor() { }
+  constructor(private store: Store<fromRoot.State>) { }
 
   ngOnInit() {
   }
@@ -23,7 +26,14 @@ export class BookListComponent implements OnInit, OnChanges {
   }
 
   addItem() {
-    console.log(11111);
+    const book: Book = {
+      id: 1984,
+      name: '1984',
+      author: 'Oruel',
+      img: 'string',
+      description: 'str'
+    }
+    this.store.dispatch(new bookAction.AddOne(book));
   }
 
 }

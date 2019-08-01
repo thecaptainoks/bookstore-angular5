@@ -1,0 +1,12 @@
+{
+  "books": {
+    "1": {
+      "id": 1, 
+      "name": "Player Piano",
+      "description": "Vonnegut’s vision of an America restructured by industrial technocrats whose robotics in the workplace result in a devaluing of human participation.",
+      "author": "K. Vonnegut",
+      "img": "http://www.publishersweekly.com/images/data/ARTICLE_LISTICLE_ITEM/override_image/000/000/860-1.JPG"
+    }
+  }
+}
+

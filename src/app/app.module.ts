@@ -17,6 +17,8 @@ import { MatCardModule } from '@angular/material/card';
 import {MatFormFieldModule, MatInputModule} from '@angular/material';
 import { MatButtonModule} from '@angular/material/button';
 import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {HttpService} from './services/http.service';
 
 export const MATERIAL_MODULES = [
   MatToolbarModule,
@@ -38,10 +40,11 @@ export const MATERIAL_MODULES = [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
     ...MATERIAL_MODULES,
     StoreModule.forRoot(reducers, {metaReducers}),
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
