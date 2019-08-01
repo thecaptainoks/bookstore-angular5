@@ -1,0 +1,13 @@
+<mat-card *ngIf="book && book.name else emptyCard">
+  <mat-card-header>
+    <mat-card-title>{{book.name}}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src="{{book.img}}" alt="book image">
+  <mat-card-content>
+    <p>{{book.description}}</p>
+  </mat-card-content>
+</mat-card>
+
+<mat-card #emptyCard>
+  Choose something
+</mat-card>

@@ -1,0 +1,9 @@
+<mat-toolbar>Books app</mat-toolbar>
+<label>
+  <input type="text" placeholder="search">
+</label>
+<main class="container">
+  <app-book-list [books]="books$ | async" [label]="'Список фильмов'" (select)="onSelect($event)"></app-book-list>
+  <app-book-selected [book]="selected$ | async"></app-book-selected>
+</main>
+
