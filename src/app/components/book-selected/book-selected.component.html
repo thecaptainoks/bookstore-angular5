@@ -1,4 +1,4 @@
-<mat-card *ngIf="book && book.name else emptyCard">
+<mat-card [ngClass]="{'_visible': book && book.name}">
   <mat-card-header>
     <mat-card-title>{{book.name}}</mat-card-title>
   </mat-card-header>
@@ -8,9 +8,4 @@
   </mat-card-content>
 </mat-card>
 
-<ng-template #emptyCard>
-  <mat-card>
-    Choose something
-  </mat-card>
-</ng-template>
 
