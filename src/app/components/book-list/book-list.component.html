@@ -1,10 +1,17 @@
 <mat-list role="list">
-  <form>
-    <input matInput>
-    <button type="submit" mat-button (click)="addItem()">Add</button>
-  </form>
   <mat-list-item  *ngFor="let book of books" role="listitem" (click)="select.emit(book.id)">
     <app-book-item  [book]="book"></app-book-item>
   </mat-list-item>
 </mat-list>
+
+<mat-form-field>
+  <input matInput placeholder="name">
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="author">
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="description">
+</mat-form-field>
+<button type="submit" mat-button (click)="addItem()">Add book</button>
 
