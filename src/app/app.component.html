@@ -4,7 +4,7 @@
 </mat-form-field>
 <button mat-button>Search</button>-->
 <main class="container">
-    <app-book-list [books]="books$ | async" [label]="'Список фильмов'" (select)="onSelect($event)"></app-book-list>
+    <app-book-list [books]="books$ | async" [label]="'Список книг'" (select)="onSelect($event)"></app-book-list>
     <app-book-selected [book]="selected$ | async"></app-book-selected>
 </main>
 

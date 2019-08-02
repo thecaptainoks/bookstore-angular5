@@ -17,6 +17,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpService} from './services/http.service';
+import { PopupComponent } from './components/popup/popup.component';
 
 export const MATERIAL_MODULES = [
     MatToolbarModule,
@@ -33,7 +34,8 @@ export const MATERIAL_MODULES = [
         AppComponent,
         BookItemComponent,
         BookListComponent,
-        BookSelectedComponent
+        BookSelectedComponent,
+        PopupComponent
     ],
     imports: [
         BrowserModule,
