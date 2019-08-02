@@ -26,6 +26,5 @@ export class AppComponent implements OnInit {
   }
   ngOnInit() {
     this.httpService.getData().subscribe(data => this.books$ = data['books']);
-  debugger
   }
 }
