@@ -28,7 +28,6 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.httpService.getData().subscribe(data => {
       this.store.dispatch(new bookAction.SetAll(data['books']));
-      this.books$ = this.store.select(fromRoot.getAllBooks);
     });
 
   }

@@ -12,28 +12,7 @@ export interface State {
 
 export const initialState: State = {
   ids: [],
-  books: {
-    /* 1: {
-       id: 1, name: 'Player Piano',
-       description: `Vonnegut’s vision of an America restructured by industrial
-       technocrats whose robotics in the workplace result in a devaluing of human participation.`,
-       author: 'K. Vonnegut',
-       img: 'http://www.publishersweekly.com/images/data/ARTICLE_LISTICLE_ITEM/override_image/000/000/860-1.JPG'
-     },
-     2: {
-       id: 2, name: 'The Sirens of Titan',
-       // tslint:disable-next-line:max-line-length
-       description: `The premise of the novel is that all of human history has been one big Rube Goldberg invention by the Tralfamadorians for the single purpose of getting a spare part to their stranded but intrepid intergalactic messenger, Salo`,
-       author: 'K. Vonnegut',
-       img: 'http://www.publishersweekly.com/images/data/ARTICLE_LISTICLE_ITEM/override_image/000/000/861-1.JPG'
-     },
-     3: {
-       id: 3, name: 'Mother Night',
-       description: `The closest Vonnegut gets to “Nazi monkey business” until letting go in Slaughterhouse-Five. `,
-       author: 'K. Vonnegut',
-       img: 'http://www.publishersweekly.com/images/data/ARTICLE_LISTICLE_ITEM/override_image/000/000/862-1.JPG'
-     },*/
-  },
+  books: {},
   selected: null,
 };
 
@@ -45,15 +24,15 @@ export function reducer(state = initialState, action: bookAction.Action) {
       const books_object = {};
       // @ts-ignore
       // tslint:disable-next-line:forin
-      for ( const book in action.payload) {
+      for ( const i in Object.values(action.payload)) {
+        const book = Object.values(action.payload)[i];
         ids_list.push(book['id']);
         books_object[book['id']] = book;
       }
-
       return {
-        ids: action.payload,
-        books: books_object,
-        ...state
+        ...state,
+        ids: ids_list,
+        books: books_object
       };
     }
 

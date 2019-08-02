@@ -33,7 +33,7 @@ export class BookListComponent implements OnInit, OnChanges {
       id: 1984,
       name: '1984',
       author: 'Orwell',
-      img: 'string',
+      img: 'https://images-na.ssl-images-amazon.com/images/I/51iq85zLtRL.jpg',
       description: 'str'
     };
     this.store.dispatch(new bookAction.AddOne(book));
