@@ -4,12 +4,7 @@ import { Book } from '../../models';
 @Component({
   selector: 'app-book-selected',
   templateUrl: './book-selected.component.html',
-  styles: [`
-  mat-card {
-    margin-top: 10px;
-    width: 700px;
-  }
-  `]
+  styleUrls: ['book-selected.component.scss']
 })
 export class BookSelectedComponent implements OnInit {
   @Input() book: Book;
