@@ -1,8 +1,16 @@
 import { Action } from '@ngrx/store';
 import { Book } from '../../models';
+import {Subscription} from 'rxjs/Subscription';
 
+export const GET_ALL = '[Books] Get All';
 export const SELECT = '[Books] Select';
 export const ADD_ONE = '[Books] Add One';
+
+export class GetAll implements Action {
+  readonly type = GET_ALL;
+
+  constructor(public payload: Subscription) { }
+}
 
 export class Select implements Action {
     readonly type = SELECT;
@@ -16,6 +24,6 @@ export class AddOne implements Action {
     constructor(public payload: Book) { }
 }
 
-export type Action = AddOne | Select;
+export type Action = GetAll | AddOne | Select;
 
 

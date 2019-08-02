@@ -25,6 +25,8 @@ export class AppComponent implements OnInit {
     this.store.dispatch(new bookAction.Select(id));
   }
   ngOnInit() {
-    this.httpService.getData().subscribe(data => this.books$ = data['books']);
+    const allBooks = this.httpService.getData().subscribe(data => this.books$ = data['books']);
+    this.store.dispatch(new bookAction.GetAll(allBooks));
+
   }
 }
