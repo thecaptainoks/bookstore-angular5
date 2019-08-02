@@ -40,7 +40,7 @@ export const initialState: State = {
 export function reducer(state = initialState, action: bookAction.Action) {
   switch (action.type) {
 
-    case bookAction.GET_ALL: {
+    case bookAction.SET_ALL: {
       const ids_list = [];
       const books_object = {};
       // @ts-ignore
