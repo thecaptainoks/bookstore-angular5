@@ -4,10 +4,10 @@ import {HttpClient} from '@angular/common/http';
 @Injectable()
 export class HttpService {
 
-  constructor(private http: HttpClient) {
-  }
+    constructor(private http: HttpClient) {
+    }
 
-  getData() {
-    return this.http.get('assets/mock/books.json');
-  }
+    getData() {
+        return this.http.get('assets/mock/books.json');
+    }
 }

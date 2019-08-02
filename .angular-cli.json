@@ -21,6 +21,7 @@
       "styles": [
         "styles.scss"
       ],
+      "aot": true,
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {

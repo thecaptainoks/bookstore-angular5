@@ -1,13 +1,13 @@
 mat-card {
-  margin-top: 10px;
-  width: 700px;
-  visibility: hidden;
+    margin-top: 10px;
+    width: 700px;
+    visibility: hidden;
 
-  &._visible {
-    visibility: visible;
-  }
+    &._visible {
+        visibility: visible;
+    }
 }
 
 .image {
-  max-width: 500px;
+    max-width: 500px;
 }

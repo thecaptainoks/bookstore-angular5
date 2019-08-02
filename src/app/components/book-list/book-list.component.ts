@@ -1,6 +1,6 @@
 import {
-  Component, OnInit, Input, OnChanges, Output,
-  EventEmitter
+    Component, OnInit, Input, OnChanges, Output,
+    EventEmitter
 } from '@angular/core';
 import {Book} from '../../models';
 import {Store} from '@ngrx/store';
@@ -9,34 +9,38 @@ import * as bookAction from '../../store/actions/books';
 
 
 @Component({
-  selector: 'app-book-list',
-  templateUrl: './book-list.component.html',
-  styleUrls: ['book-list.component.scss']
+    selector: 'app-book-list',
+    templateUrl: './book-list.component.html',
+    styleUrls: ['book-list.component.scss']
 
 })
 export class BookListComponent implements OnInit, OnChanges {
-  @Input() books: Book[];
-  @Input() label: string;
-  @Output() select = new EventEmitter();
+    @Input() books: Book[];
+    @Input() label: string;
+    @Output() select = new EventEmitter();
 
-  constructor(private store: Store<fromRoot.State>) {
-  }
+    constructor(private store: Store<fromRoot.State>) {
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
-  ngOnChanges(changes) {
-  }
+    ngOnChanges(changes) {
+    }
 
-  addItem() {
-    const book: Book = {
-      id: 1984,
-      name: '1984',
-      author: 'Orwell',
-      img: 'https://images-na.ssl-images-amazon.com/images/I/51iq85zLtRL.jpg',
-      description: 'str'
-    };
-    this.store.dispatch(new bookAction.AddOne(book));
-  }
+    openPopup() {
+
+    }
+
+    addItem() {
+        const book: Book = {
+            id: 1984,
+            name: '1984',
+            author: 'Orwell',
+            img: 'https://images-na.ssl-images-amazon.com/images/I/51iq85zLtRL.jpg',
+            // description: 'str'
+        };
+        this.store.dispatch(new bookAction.AddOne(book));
+    }
 
 }

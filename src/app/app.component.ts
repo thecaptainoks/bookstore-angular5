@@ -7,28 +7,28 @@ import * as bookAction from './store/actions/books';
 import {HttpService} from './services/http.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  books$: Observable<Book[]>;
-  selected$: Observable<Book>;
+    books$: Observable<Book[]>;
+    selected$: Observable<Book>;
 
-  constructor(private store: Store<fromRoot.State>,
-              private httpService: HttpService) {
-    this.books$ = store.select(fromRoot.getAllBooks);
-    this.selected$ = store.select(fromRoot.getSelectedBook);
-  }
+    constructor(private store: Store<fromRoot.State>,
+                private httpService: HttpService) {
+        this.books$ = store.select(fromRoot.getAllBooks);
+        this.selected$ = store.select(fromRoot.getSelectedBook);
+    }
 
-  onSelect(id: number) {
-    this.store.dispatch(new bookAction.Select(id));
-  }
+    onSelect(id: number) {
+        this.store.dispatch(new bookAction.Select(id));
+    }
 
-  ngOnInit() {
-    this.httpService.getData().subscribe(data => {
-      this.store.dispatch(new bookAction.SetAll(data['books']));
-    });
+    ngOnInit() {
+        this.httpService.getData().subscribe(data => {
+            this.store.dispatch(new bookAction.SetAll(data['books']));
+        });
 
-  }
+    }
 }
