@@ -1,0 +1,11 @@
+<mat-list class="book-list"
+        role="list">
+    <mat-list-item class="book-list__inner"
+            *ngFor="let book of books"
+            role="listitem"
+            (click)="select.emit(book.id)">
+        <app-book-item [book]="book"></app-book-item>
+    </mat-list-item>
+</mat-list>
+
+

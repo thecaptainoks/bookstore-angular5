@@ -47,6 +47,27 @@ export function reducer(state = initialState, action: bookAction.Action) {
             };
         }
 
+        case bookAction.REMOVE_ONE: {
+            const book: Book = action.payload;
+            delete state.books[book.id];
+            return {
+                ...state,
+                ids: [...state.ids.filter(i => i !== book.id)],
+                books: state.books
+            };
+        }
+
+        case bookAction.SEARCH_BOOK: {
+            const bookName: string = action.payload;
+            const idss = state.ids.filter(i => state.books[i].name.indexOf(bookName) );
+            console.log(state.books['48787979'].name.indexOf(bookName));
+            return {
+                ...state,
+                ids: [...state.ids.filter(i => state.books[i].name === bookName)],
+                books: state.books[idss[0]]
+            };
+        }
+
 
         case bookAction.SELECT: {
             const id = action.payload;

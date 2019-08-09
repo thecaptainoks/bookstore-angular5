@@ -1,0 +1,15 @@
+<mat-toolbar class="bookstore__toolbar">
+    Books app
+    <div class="bookstore__controls">
+        <button class="bookstore__button"
+                routerLink="/search"
+                mat-raised-button>Search for books</button>
+        <button class="bookstore__button"
+                mat-raised-button
+                (click)="openDialog()">Add new book</button>
+    </div>
+</mat-toolbar>
+<main class="bookstore__container">
+    <app-book-list [books]="books$ | async" [label]="'Список книг'" (select)="onSelect($event)"></app-book-list>
+    <app-book-selected [book]="selected$ | async"></app-book-selected>
+</main>

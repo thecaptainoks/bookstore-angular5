@@ -1,0 +1,16 @@
+<mat-card class="book"
+          [class._visible]="book && book.name">
+    <mat-card-header class="book__header">
+        <mat-card-title class="book__title">{{book.name}}</mat-card-title>
+    </mat-card-header>
+    <img *ngIf="book.img"
+            class="book__image"
+            mat-card-image
+            src="{{book.img}}"
+            alt="book image">
+    <mat-card-content class="book__content">
+        <p class="book__description">{{book.description}}</p>
+    </mat-card-content>
+</mat-card>
+
+

@@ -1,0 +1,29 @@
+<fieldset class="popup__form"
+          [formGroup]="newBook">
+    <mat-form-field>
+        <input matInput
+               formControlName="bookName"
+               placeholder="name"
+               [required]="true">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput
+               formControlName="author"
+               placeholder="author">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput
+               formControlName="img"
+               placeholder="image">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput
+               formControlName="description"
+               placeholder="description">
+    </mat-form-field>
+    <button mat-raised-button
+            type="submit"
+            (click)="addItem()">Add
+    </button>
+
+</fieldset>

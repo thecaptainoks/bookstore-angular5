@@ -1,0 +1,19 @@
+<div class="search">
+<!--    <button class="search__button"
+            routerLink="/books"
+            mat-raised-button>Back home
+    </button>-->
+    <mat-form-field class="search__form">
+        <input class="search__input"
+               [formControl]="searchStr"
+               matInput
+               placeholder="search by name">
+
+    </mat-form-field>
+    <button (click)="search()"
+            class="search__button"
+            mat-raised-button>Search
+    </button>
+</div>
+
+

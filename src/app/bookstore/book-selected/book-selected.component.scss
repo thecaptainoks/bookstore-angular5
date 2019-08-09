@@ -1,0 +1,17 @@
+.book {
+    display: flex;
+    margin-top: 10px;
+    width: 700px;
+    visibility: hidden;
+    flex-direction: column;
+
+    &._visible {
+        visibility: visible;
+    }
+
+    &__image {
+        max-width: 500px;
+        margin: 10px auto;
+    }
+}
+

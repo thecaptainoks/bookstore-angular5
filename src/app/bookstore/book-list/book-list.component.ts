@@ -1,7 +1,4 @@
-import {
-    Component, OnInit, Input, OnChanges, Output,
-    EventEmitter
-} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
 import {Book} from '../../models';
 import {Store} from '@ngrx/store';
 import * as fromRoot from '../../store/reducers';
@@ -14,7 +11,7 @@ import * as bookAction from '../../store/actions/books';
     styleUrls: ['book-list.component.scss']
 
 })
-export class BookListComponent implements OnInit, OnChanges {
+export class BookListComponent implements OnInit {
     @Input() books: Book[];
     @Input() label: string;
     @Output() select = new EventEmitter();
@@ -23,13 +20,6 @@ export class BookListComponent implements OnInit, OnChanges {
     }
 
     ngOnInit() {
-    }
-
-    ngOnChanges(changes) {
-    }
-
-    openPopup() {
-
     }
 
     addItem() {

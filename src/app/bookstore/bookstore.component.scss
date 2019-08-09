@@ -1,0 +1,14 @@
+.bookstore {
+    &__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__toolbar {
+        display: flex;
+    }
+    &__controls {
+        margin-left: auto;
+    }
+}
